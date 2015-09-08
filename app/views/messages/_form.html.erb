@@ -13,13 +13,17 @@
 </div>
 <% end %>
 
-名前
+名前:
+<%= f.text_field :name, :size => "20x1"%>
 <br>
-<%= f.text_field :name, :size => "10x1"%>
 <br>
-内容
+年齢:
+<%= f.number_field :age %>
 <br>
-<%= f.text_area :body, :size => "30x1"%>
+<br>
+内容:
+<br>
+<%= f.text_area :body, :size => "30x2"%>
 <br>
 <%= f.submit class: "btn btn-sm btn-primary" %>
 

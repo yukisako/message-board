@@ -12,13 +12,13 @@ class MessagesController < ApplicationController
   def update
     if @message.update(message_params)
       redirect_to root_path, notice: 'メッセージを編集しました'
-      puts "OK"
     else
       render 'edit'
     end
   end
 
   def create
+    binding.pry
     @message = Message.new(message_params)
     if @message.save
       redirect_to root_path, notice: 'メッセージを保存しました'
@@ -36,7 +36,7 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:name, :body)
+    params.require(:message).permit(:name, :age, :body)
   end
 
   def set_message
